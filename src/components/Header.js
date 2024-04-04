@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../../utils/constants";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("login");
+  const onlineStatus = useOnlineStatus();
 
   // console.log("header render");
 
@@ -47,6 +49,7 @@ const Header = () => {
               style={{ color: "#51291f" }}
             ></i>
           </li>
+          <li>Online status : {onlineStatus ? "🟢" : "🔴"}</li>
           <button
             className="login"
             onClick={() => {

@@ -17,10 +17,10 @@ const RestaurantMenu = () => {
   if (resInfo === null) return <Shimmer />;
 
   const { costForTwoMessage, cuisines, name } =
-    resInfo?.cards[0]?.card?.card?.info;
+    resInfo?.cards[2]?.card?.card?.info;
 
   const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   console.log(itemCards);
 
   return (
@@ -49,5 +49,4 @@ const RestaurantMenu = () => {
 
 export default RestaurantMenu;
 
-
- //https://react.dev/learn/reusing-logic-with-custom-hooks#passing-reactive-values-between-hooks
+//https://react.dev/learn/reusing-logic-with-custom-hooks#passing-reactive-values-between-hooks

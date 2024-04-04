@@ -53,6 +53,11 @@
   border-top-right-radius: 20px;
 }
 
+
+.online-status>h1{
+  text-align: center;
+}
+
 /************Shimmer***********/
 
 .shimmer-container {
