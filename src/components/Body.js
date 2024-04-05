@@ -6,17 +6,19 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 
+//data.cards[1].card.card.gridElements.infoWithStyle.restaurants[1].info.isOpen
+
 const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   const listOfRestaurants = useListOfRestaurants();
- // console.log(listOfRestaurants);
- const onlineStatus = useOnlineStatus();
+  console.log(listOfRestaurants);
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
     setFilteredRestaurant(listOfRestaurants);
-   // console.log("filter useEffect called");
+    // console.log("filter useEffect called");
   }, [listOfRestaurants]);
 
   // conditional rendering
@@ -44,22 +46,25 @@ const Body = () => {
 
   //or
 
-if(onlineStatus=== false){
-  return <div className="online-status">
-    <h1>Looks Like You are offline!! Please Check Your Internet Connection.</h1>
-  </div>
-}
-
+  if (onlineStatus === false) {
+    return (
+      <div className="online-status">
+        <h1>
+          Looks Like You are offline!! Please Check Your Internet Connection.
+        </h1>
+      </div>
+    );
+  }
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex justify-center m-4 p-2 ">
+        <div className="flex justify-between mx-4  border-4 bg-white border-slate-300 rounded-lg">
           <input
             type="text"
-            className="search-box"
+            className="search-box w-[600px] text-center rounded-lg mr-1 "
             placeholder="Search here!"
             value={searchText}
             onChange={(e) => {
@@ -68,6 +73,7 @@ if(onlineStatus=== false){
             }}
           />
           <button
+            className="bg-white rounded-lg"
             onClick={() => {
               // console.log(searchText);
               const filteredRest = listOfRestaurants.filter((res) =>
@@ -79,12 +85,12 @@ if(onlineStatus=== false){
               setFilteredRestaurant(filteredRest);
             }}
           >
-            <i className="fa-solid fa-search" style={{ color: "#51291f" }}></i>
+            <i className="fa-solid fa-search mx-3  "></i>
           </button>
         </div>
 
         <button
-          className="filter-btn"
+          className="filter-btn mx-4 p-2 rounded-lg border-4 bg-blue-200 text-slate-500 font-bold"
           onClick={() => {
             // listOfRestaurants = listOfRestaurants.filter(
             //   (res) => res.info.avgRating > 4
@@ -99,6 +105,7 @@ if(onlineStatus=== false){
           Top Rated Restaurants
         </button>
         <button
+          className="mx-4 p-2 rounded-lg border-4 bg-blue-200 text-red-500 font-bold"
           onClick={() => {
             setFilteredRestaurant(listOfRestaurants);
           }}
@@ -106,7 +113,7 @@ if(onlineStatus=== false){
           Reset Filter
         </button>
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap justify-center items-center p-8 w-full ">
         {/* this res-container will contain lot of restaurant cards */}
         {/* <RestaurantCard
             resName="Meghana Foods"

@@ -25,36 +25,47 @@ const Header = () => {
   // }, [btnName]);
 
   return (
-    <div className="header">
+    <div className="shadow-2xl px-4 py-1 flex justify-between items-center bg-slate-100">
       <div className="logo-container">
         {" "}
         <Link to="/">
-          <img className="logo" src={LOGO_URL} />
+          <img className="logo w-40 mix-blend-darken" src={LOGO_URL} />
         </Link>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+      <div className="nav-items ">
+        <ul className="flex items-center text-xl ">
+          <li className="mr-4 font-semibold">
+            <Link to="/" className="hover:underline">
+              Home
+            </Link>
           </li>
-          <li>
-            <Link to="/about">AboutUs</Link>
+          <li className="mr-4 font-semibold">
+            <Link to="/about" className="hover:underline">
+              AboutUs
+            </Link>
           </li>
-          <li>
-            <Link to="/contact">Contact</Link>
+          <li className="mr-4 font-semibold">
+            <Link to="/contact" className="hover:underline">
+              Contact
+            </Link>
           </li>
-          <li>
-            <Link to="/grocery">Grocery</Link>
+          <li className="mr-4 font-semibold">
+            <Link to="/grocery" className="hover:underline">
+              Grocery
+            </Link>
           </li>
-          <li>
+
+          <li className="mr-4 font-semibold">
+            Online status : {onlineStatus ? "🟢" : "🔴"}
+          </li>
+          <li className="mr-4 font-semibold">
             <i
               className="fa-solid fa-cart-shopping"
               style={{ color: "#51291f" }}
             ></i>
           </li>
-          <li>Online status : {onlineStatus ? "🟢" : "🔴"}</li>
           <button
-            className="login"
+            className="border p-2 rounded-lg bg-slate-400"
             onClick={() => {
               btnName === "Login" ? setBtnName("logout") : setBtnName("Login");
             }}

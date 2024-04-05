@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 /* #heading{
     color: red;
 } */
@@ -7,7 +12,7 @@
 }
 
 /* Header css */
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,14 +38,14 @@
 
 /* body css */
 
-.res-container {
+/* .res-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .res-card {
-  /* border: 1px solid black; */
+  border: 1px solid black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   width: 210px;
   margin: 10px;
@@ -56,11 +61,11 @@
 
 .online-status>h1{
   text-align: center;
-}
+}  */
 
 /************Shimmer***********/
 
-.shimmer-container {
+/* .shimmer-container {
   margin-top: 60px;
   display: flex;
   flex-wrap: wrap;
@@ -68,7 +73,7 @@
 }
 
 .shimmer-card {
-  /* border: 1px solid black; */
+  border: 1px solid black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
   width: 210px;
@@ -108,7 +113,7 @@
 .user-card {
   padding: 50px;
   border: 1px solid black;
-}
+} */
 
 /********loading spinner*******/
 /* .spin-loader {
@@ -169,8 +174,8 @@
 
 /******************Footer*****************/
 
-.footer {
+/* .footer {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
+} */
