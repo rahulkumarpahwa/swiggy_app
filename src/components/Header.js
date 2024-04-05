@@ -44,6 +44,9 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
+            <Link to="/grocery">Grocery</Link>
+          </li>
+          <li>
             <i
               className="fa-solid fa-cart-shopping"
               style={{ color: "#51291f" }}
