@@ -17,7 +17,7 @@ const Shimmer = () => {
     );
   }
   return (
-    <div className="shimmer-container flex flex-wrap justify-center items-center mt-20 p-8 w-full ">
+    <div className="shimmer-container flex flex-wrap justify-center items-center mt-20 w-full ">
       {arr}
     </div>
   );

@@ -113,7 +113,7 @@ const Body = () => {
           Reset Filter
         </button>
       </div>
-      <div className="res-container flex flex-wrap justify-center items-center p-8 w-full ">
+      <div className="res-container flex flex-wrap justify-center items-center w-full ">
         {/* this res-container will contain lot of restaurant cards */}
         {/* <RestaurantCard
             resName="Meghana Foods"
