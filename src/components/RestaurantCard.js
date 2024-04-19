@@ -8,7 +8,7 @@ const RestaurantCard = (props) => {
   // console.log(props);
   // const { resName, cuisine } = props;
   const { resData } = props;
-  console.log(resData);
+  // console.log(resData);  
 
   const { cloudinaryImageId, name, cuisines, avgRating, sla, veg } =
     resData?.info;

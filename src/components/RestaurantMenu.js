@@ -4,13 +4,14 @@ import { useParams } from "react-router-dom";
 // import { MENU_API } from "../../utils/constants";
 import { Link } from "react-router-dom";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   // const params = useParams();
   // console.log(params);
   const { resId } = useParams();
 
-  console.log("before useRestaurantMenu");
+  // console.log("before useRestaurantMenu");
 
   const resInfo = useRestaurantMenu(resId); //custom functional Hook
 
@@ -21,28 +22,50 @@ const RestaurantMenu = () => {
 
   const { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-  console.log(itemCards);
+  // console.log(itemCards);
+  // console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+  //@type: 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
 
+  const categories =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  console.log(categories);
 
   return (
-    <div className="menu">
-      {console.log("render called")}
-      <h1>{name}</h1> <br />
-      <h3>{costForTwoMessage}</h3>
+    <div className="menu mt-10">
+      {/* {console.log("render called")} */}
+      <div className="flex items-center flex-col">
+        <h1 className="font-bold text-3xl">{name}</h1> <br />
+        <h3>{costForTwoMessage}</h3>
+        <br />
+        <h3>{cuisines.join(", ")}</h3>
+      </div>
       <br />
-      <h3>{cuisines.join(", ")}</h3>
-      <br />
-      <h2>Menu</h2>
-      <ul>
+      {/* <ul>
         {itemCards.map((item) => (
           <li key={item.card.info.id}>
             {item.card.info.name} - ₹
             {item.card.info.price / 100 || item.card.info.defaultPrice}
           </li>
         ))}
-      </ul>
-      <Link to={"/"}>
-        <button>Back to Home</button>
+      </ul> */}
+      <div>
+        {categories.map((category) => (
+          <RestaurantCategory
+            key={category?.card?.card?.title}
+            data={category?.card?.card}
+          />
+        ))}
+        ;
+      </div>
+      <Link
+        to={"/"}
+        className="absolute top-[95px] right-5 bg-slate-50 my-20  border-2 p-2 border-slate-400 rounded-lg"
+      >
+        Back to Home
       </Link>
     </div>
   );
