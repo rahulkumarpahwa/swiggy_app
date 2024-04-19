@@ -8,9 +8,10 @@ const RestaurantCard = (props) => {
   // console.log(props);
   // const { resName, cuisine } = props;
   const { resData } = props;
-  //   console.log(resData);
+  console.log(resData);
 
-  const { cloudinaryImageId, name, cuisines, avgRating, sla } = resData?.info;
+  const { cloudinaryImageId, name, cuisines, avgRating, sla, veg } =
+    resData?.info;
 
   return (
     <div
@@ -36,6 +37,17 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
+};
+
+export const withVegLabel = (RestaurantCard) => {
+  return (resData) => {
+    return (
+      <div>
+        <label className="absolute text-white bg-green-400 p-1 rounded-lg z-30 ml-11 mt-3">Pure Veg</label>
+        <RestaurantCard {...resData}  />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

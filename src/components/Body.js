@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import { withVegLabel } from "./RestaurantCard";
 
 //data.cards[1].card.card.gridElements.infoWithStyle.restaurants[1].info.isOpen
 
@@ -12,8 +13,9 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const RestaurantCardVeg = withVegLabel(RestaurantCard);
+
   const listOfRestaurants = useListOfRestaurants();
-  console.log(listOfRestaurants);
   const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
@@ -79,8 +81,8 @@ const Body = () => {
               const filteredRest = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
-              console.log(typeof searchText);
-              console.log(filteredRest);
+              // console.log(typeof searchText);
+              // console.log(filteredRest);
               setSearchText(""); //added to delete whatever is written in the box after search button is pressed.
               setFilteredRestaurant(filteredRest);
             }}
@@ -148,7 +150,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.veg ? (
+              <RestaurantCardVeg resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
