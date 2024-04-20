@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   // const params = useParams();
@@ -12,6 +13,10 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
 
   // console.log("before useRestaurantMenu");
+
+   const [showItems, setShowItems] = useState(true);
+
+  
 
   const resInfo = useRestaurantMenu(resId); //custom functional Hook
 
@@ -57,6 +62,8 @@ const RestaurantMenu = () => {
           <RestaurantCategory
             key={category?.card?.card?.title}
             data={category?.card?.card}
+            showItems={showItems}
+            setShowItems={setShowItems}
           />
         ))}
         ;
