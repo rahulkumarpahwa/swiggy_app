@@ -14,8 +14,8 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
 
   // console.log("before useRestaurantMenu");
-
   //  const [showItems, setShowItems] = useState(true);
+  const [showIndex, setShowIndex] = useState(null);
 
   const resInfo = useRestaurantMenu(resId); //custom functional Hook
 
@@ -65,12 +65,12 @@ const RestaurantMenu = () => {
         ))}
       </ul> */}
       <div>
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           <RestaurantCategory
             key={category?.card?.card?.title}
             data={category?.card?.card}
-            // showItems={showItems}
-            // setShowItems={setShowItems}
+            showItems={index === showIndex ? true : false}
+            setShowIndex={()=>setShowIndex(index)}
           />
         ))}
         ;

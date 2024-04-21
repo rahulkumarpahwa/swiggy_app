@@ -1,11 +1,11 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data}) => {
+const RestaurantCategory = ({ data, showItems, setShowIndex}) => {
   
-   const [showItems, setShowItems] = useState(true);
+  //  const [showItems, setShowItems] = useState(true);
   const handleClick = () => {
-    setShowItems(!showItems);
+    setShowIndex();
   };
   return (
     <div className="w-6/12 m-auto bg-gray-50 shadow-lg p-4 my-4 rounded-xs">
@@ -19,7 +19,7 @@ const RestaurantCategory = ({ data}) => {
         <span className="text-gray-400">▼</span>
       </div>
       {showItems && (
-        <ItemList items={data.itemCards} setShowItems={setShowItems} />
+        <ItemList items={data.itemCards} />
       )}
     </div>
   );

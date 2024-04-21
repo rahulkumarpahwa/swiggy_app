@@ -1,6 +1,6 @@
 import { CDN_URL } from "../../utils/constants";
 
-const ItemList = ({ items, setShowItems }) => {
+const ItemList = ({ items }) => {
   return (
     <div>
       {console.log(items)}
@@ -12,7 +12,9 @@ const ItemList = ({ items, setShowItems }) => {
         >
           <div className="w-9/12">
             <div className="py-2">
-              <span className="font-semibold mr-2">{item?.card?.info?.name}</span>
+              <span className="font-semibold mr-2">
+                {item?.card?.info?.name}
+              </span>
               <span>
                 ₹
                 {item?.card?.info?.price
@@ -24,9 +26,14 @@ const ItemList = ({ items, setShowItems }) => {
           </div>
           <div className="w-4/12 p-4">
             <div className="absolute">
-              <button className="py-2 px-1 text-xs bg-black left-0 top-0 text-white shadow-xl m-auto rounded-sm">Add +</button>
+              <button className="py-2 px-1 text-xs bg-black left-0 top-0 text-white shadow-xl m-auto rounded-sm">
+                Add +
+              </button>
             </div>
-            <img src={CDN_URL + item.card.info.imageId} className="w-full rounded-lg" />{" "}
+            <img
+              src={CDN_URL + item.card.info.imageId}
+              className="w-full rounded-lg"
+            />{" "}
           </div>
         </div>
       ))}
