@@ -72,7 +72,7 @@
 </div>
 */
 
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 
 // const parent = React.createElement("div", { id: "parent" }, [
@@ -307,17 +307,25 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { lazy, Suspense } from "react";
 const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import("./components/About"));
+import UserContext from "../utils/UserContext";
 
 //component composition
 const AppLayout = () => {
+  const [userName, setUserName] = useState("Elon Musk");
   return (
-    <div className="app">
-      <Header />
-      {/* <Body /> */}
-      {/* body is replaced by outlet and outlet changes the page according to the route which we call. */}
-      <Outlet />
-      <Footer />
-    </div>
+    <UserContext.Provider
+      value={{ loggedInUser: userName, setUserName: setUserName }}
+    >
+      <div className="app">
+        {/* <UserContext.Provider value={{loggedInUser : "Apple"}}> */}
+          <Header />
+        {/* </UserContext.Provider> */}
+        {/* <Body /> */}
+        {/* body is replaced by outlet and outlet changes the page according to the route which we call. */}
+        <Outlet />
+        <Footer />
+      </div>
+    </UserContext.Provider>
   );
 };
 

@@ -1,4 +1,6 @@
 import { CDN_URL } from "../../utils/constants";
+import UserContext from "../../utils/UserContext";
+import { useContext } from "react";
 
 let styleCard = {
   backgroundColor: "#f0f0f0",
@@ -9,6 +11,8 @@ const RestaurantCard = (props) => {
   // const { resName, cuisine } = props;
   const { resData } = props;
   // console.log(resData);  
+  const { loggedInUser } = useContext(UserContext);
+
 
   const { cloudinaryImageId, name, cuisines, avgRating, sla, veg } =
     resData?.info;
@@ -19,7 +23,7 @@ const RestaurantCard = (props) => {
       // style={styleCard}
     >
       <img
-        className="res-logo w-full h-[70%] rounded-lg"
+        className="res-logo w-full h-[60%] rounded-lg"
         src={CDN_URL + cloudinaryImageId}
       />
 
@@ -34,6 +38,7 @@ const RestaurantCard = (props) => {
         <h4>{cuisines.join(", ")}</h4>
         <h4>{avgRating} stars</h4>
         <h4>{sla.deliveryTime} minutes </h4>
+        <h4 className="underline">@{loggedInUser} </h4>
       </div>
     </div>
   );

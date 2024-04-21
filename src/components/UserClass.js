@@ -299,6 +299,7 @@ import { Component } from "react";
 // }
 
 //v1.11
+import { Link } from "react-router-dom";
 class UserClass extends Component {
   constructor(props) {
     super(props);
@@ -338,14 +339,19 @@ class UserClass extends Component {
     const { name, location } = this.state.userInfo;
     // debugger;
     return (
-      <div className="user-card">
+      <div className="user-card flex justify-center gap-20">
         <img
           src={this.state.userInfo.avatar_url}
           style={{ width: "200px", height: "200px" }}
+          className="rounded-lg"
         />
-        <h2>Name : {name}</h2>
-        <h3>Location : {location}</h3>
-        <h4>contact : @rahulkumarpahwa</h4>
+        <div className="font-semibold">
+          <h2>{name}</h2>
+          <h3>{location}</h3>
+          <h4>
+            <Link to="https://github.com/rahulkumarpahwa" className="hover:underline">@rahulkumarpahwa</Link>
+          </h4>
+        </div>
       </div>
     );
   }

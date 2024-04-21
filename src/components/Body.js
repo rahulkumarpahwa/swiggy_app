@@ -1,11 +1,13 @@
 import useListOfRestaurants from "../../utils/useListOfRestaurants";
 import RestaurantCard from "./RestaurantCard";
 // import resList from "../../utils/mockData";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import { withVegLabel } from "./RestaurantCard";
+import UserContext from "../../utils/UserContext";
+import UserContext from "../../utils/UserContext";
 
 //data.cards[1].card.card.gridElements.infoWithStyle.restaurants[1].info.isOpen
 
@@ -13,10 +15,13 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const { loggedInUser, setUserName } = useContext(UserContext); // for using context
+
   const RestaurantCardVeg = withVegLabel(RestaurantCard);
 
   const listOfRestaurants = useListOfRestaurants();
   const onlineStatus = useOnlineStatus();
+  console.log(listOfRestaurants);
 
   useEffect(() => {
     setFilteredRestaurant(listOfRestaurants);
@@ -66,7 +71,7 @@ const Body = () => {
         <div className="flex justify-between mx-4  border-4 bg-white border-slate-300 rounded-lg">
           <input
             type="text"
-            className="search-box w-[600px] text-center rounded-lg mr-1 "
+            className="search-box w-[400px] text-center rounded-lg mr-1 "
             placeholder="Search here!"
             value={searchText}
             onChange={(e) => {
@@ -91,6 +96,17 @@ const Body = () => {
           </button>
         </div>
 
+        <div>
+          <input
+            value={loggedInUser}
+            placeholder="Type and See magic!"
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+            className="p-2 border-4 text-center bg-white border-slate-300 rounded-lg"
+          />
+        </div>
+
         <button
           className="filter-btn mx-4 p-2 rounded-lg border-4 bg-blue-200 text-slate-500 font-bold"
           onClick={() => {
@@ -107,7 +123,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
         <button
-          className="mx-4 p-2 rounded-lg border-4 bg-blue-200 text-red-500 font-bold"
+          className="mx-2 p-2 rounded-lg border-4 bg-blue-200 text-red-500 font-bold"
           onClick={() => {
             setFilteredRestaurant(listOfRestaurants);
           }}
