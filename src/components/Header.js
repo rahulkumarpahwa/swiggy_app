@@ -4,7 +4,7 @@ import { LOGO_URL } from "../../utils/constants";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Header = () => {
-  const [btnName, setBtnName] = useState("login");
+  const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
 
   // console.log("header render");
@@ -67,7 +67,7 @@ const Header = () => {
           <button
             className="border p-2 rounded-lg bg-slate-400"
             onClick={() => {
-              btnName === "Login" ? setBtnName("logout") : setBtnName("Login");
+              btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}
           >
             {btnName}

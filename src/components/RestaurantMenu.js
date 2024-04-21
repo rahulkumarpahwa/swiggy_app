@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import { useState } from "react";
+import { CDN_URL } from "../../utils/constants";
 
 const RestaurantMenu = () => {
   // const params = useParams();
@@ -14,19 +15,19 @@ const RestaurantMenu = () => {
 
   // console.log("before useRestaurantMenu");
 
-   const [showItems, setShowItems] = useState(true);
-
-  
+  //  const [showItems, setShowItems] = useState(true);
 
   const resInfo = useRestaurantMenu(resId); //custom functional Hook
 
   if (resInfo === null) return <Shimmer />;
 
-  const { costForTwoMessage, cuisines, name } =
+  const { costForTwoMessage, cuisines, name, cloudinaryImageId } =
     resInfo?.cards[2]?.card?.card?.info;
 
-  const { itemCards } =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+  console.log(resInfo?.cards[2]?.card?.card?.info);
+
+  // const { itemCards } =
+  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
   // console.log(itemCards);
   // console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
   //@type: 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
@@ -42,12 +43,18 @@ const RestaurantMenu = () => {
   return (
     <div className="menu mt-10">
       {/* {console.log("render called")} */}
-      <div className="flex items-center flex-col">
-        <h1 className="font-bold text-3xl">{name}</h1> <br />
-        <h3>{costForTwoMessage}</h3>
-        <br />
-        <h3>{cuisines.join(", ")}</h3>
+      <div className="flex items-center justify-center gap-40">
+        <div>
+          <h1 className="font-bold text-3xl">{name}</h1> <br />
+          <h3 className="font-bold text-xl">{costForTwoMessage}</h3>
+          <br />
+          <h3 className="font-bold text-xl">{cuisines.join(", ")}</h3>
+        </div>
+        <div className="w-40 shadow-lg">
+          <img src={CDN_URL + cloudinaryImageId} className="rounded-lg" />
+        </div>
       </div>
+
       <br />
       {/* <ul>
         {itemCards.map((item) => (
@@ -62,8 +69,8 @@ const RestaurantMenu = () => {
           <RestaurantCategory
             key={category?.card?.card?.title}
             data={category?.card?.card}
-            showItems={showItems}
-            setShowItems={setShowItems}
+            // showItems={showItems}
+            // setShowItems={setShowItems}
           />
         ))}
         ;

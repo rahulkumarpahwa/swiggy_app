@@ -1,6 +1,6 @@
 import { CDN_URL } from "../../utils/constants";
 
-const ItemList = ({ items }) => {
+const ItemList = ({ items, setShowItems }) => {
   return (
     <div>
       {console.log(items)}
@@ -22,9 +22,9 @@ const ItemList = ({ items }) => {
             </div>
             <p className="text-xs"> {item?.card?.info?.description}</p>{" "}
           </div>
-          <div className="w-3/12 p-4">
+          <div className="w-4/12 p-4">
             <div className="absolute">
-              <button className="p-1 text-xs bg-black my-0 text-white shadow-xl mx-auto rounded-sm">Add +</button>
+              <button className="py-2 px-1 text-xs bg-black left-0 top-0 text-white shadow-xl m-auto rounded-sm">Add +</button>
             </div>
             <img src={CDN_URL + item.card.info.imageId} className="w-full rounded-lg" />{" "}
           </div>
