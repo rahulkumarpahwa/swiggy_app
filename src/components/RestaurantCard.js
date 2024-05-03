@@ -19,7 +19,7 @@ const RestaurantCard = (props) => {
 
   return (
     <div
-      className="res-card w-80 h-[27rem] m-4 p-2 rounded-lg bg-gray-200 hover:opacity-80"
+      className="res-card w-80 h-[27rem] m-4 p-2 rounded-lg bg-neutral-200 hover:opacity-80"
       // style={styleCard}
     >
       <div className="w-80 m-auto h-[60%]">
@@ -38,8 +38,14 @@ const RestaurantCard = (props) => {
       <div className="flex flex-col justify-center font-semibold gap-2 my-2 px-2">
         <h3 className="font-bold text-center text-md line-clamp-1">{name}</h3>
         <h4 className="line-clamp-1">{cuisines.join(", ")}</h4>
-        <h4 className="text-teal-500">{avgRating} stars</h4>
-        <h4 className="text-purple-800">{sla.deliveryTime} minutes </h4>
+        <h4 className="text-teal-400">
+          <i className="fa-solid fa-star"></i> {" "}
+          {avgRating} stars
+        </h4>
+        <h4 className="text-purple-800">
+          {" "}
+          <i className="fa-solid fa-clock"></i> {sla.deliveryTime} minutes{" "}
+        </h4>
         <h4 className="text-gray-800">{costForTwo}</h4>
         {/* <h4 className="underline">@{loggedInUser} </h4> */}
       </div>

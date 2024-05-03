@@ -28,8 +28,8 @@ const Header = () => {
   // }, [btnName]);
 
   return (
-    <div className="relative shadow-md px-4 py-1 flex justify-between items-center bg-neutral-100">
-      <div className="absolute text-md text-white top-0 right-0 m-2 border bg-gray-500 border-gray-500 rounded-lg px-1">
+    <div className="relative shadow-md px-4 py-1 flex justify-between items-center bg-neutral-200">
+      <div className="absolute text-md text-white top-0 right-0 m-2 border bg-neutral-500 rounded-lg px-1">
         Online Status : {onlineStatus ? "🟢" : "🔴"}
       </div>
 
@@ -42,14 +42,17 @@ const Header = () => {
       <div className="nav-items ">
         <ul className="flex items-center justify-center gap-5 font-semibold text-gray-800 text-lg ">
           <li className="">
-            <Link to="/" className="hover:underline hover:text-neutral-500">
+            <Link
+              to="/"
+              className="hover:bg-neutral-500 hover:text-white p-1 rounded-lg"
+            >
               Home
             </Link>
           </li>
           <li className="">
             <Link
               to="/about"
-              className="hover:underline hover:text-neutral-500"
+              className="hover:bg-neutral-500 hover:text-white p-1 rounded-lg"
             >
               About Us
             </Link>
@@ -57,7 +60,7 @@ const Header = () => {
           <li className="">
             <Link
               to="/contact"
-              className="hover:underline hover:text-neutral-500"
+              className="hover:bg-neutral-500 hover:text-white p-1 rounded-lg"
             >
               Contact Us
             </Link>
@@ -65,19 +68,19 @@ const Header = () => {
           <li className="">
             <Link
               to="/grocery"
-              className="hover:underline hover:text-neutral-500"
+              className="hover:bg-neutral-500 hover:text-white p-1 rounded-lg"
             >
               Grocery
             </Link>
           </li>
-          <li className="hover:text-neutral-700">
+          <li className="hover:bg-neutral-500 hover:text-white p-1 rounded-lg">
             <i className="fa-solid fa-cart-shopping "></i> Cart
           </li>
-          <li className="text-gray-800 text-lg hover:text-neutral-500">
+          <li className="text-gray-800 text-lg hover:bg-neutral-500 hover:text-white p-1 rounded-lg">
             @{data.loggedInUser.toUpperCase()}
           </li>
           <button
-            className="border py-1 px-2 rounded-lg text-[1rem] bg-gray-500 text-white"
+            className="hover:bg-neutral-500 hover:text-white p-1 rounded-lg"
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}

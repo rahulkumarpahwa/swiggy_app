@@ -70,14 +70,14 @@ const RestaurantMenu = () => {
             key={category?.card?.card?.title}
             data={category?.card?.card}
             showItems={index === showIndex ? true : false}
-            setShowIndex={()=>setShowIndex(index)}
+            setShowIndex={() => setShowIndex(index)}
           />
         ))}
         ;
       </div>
       <Link
         to={"/"}
-        className="absolute top-[95px] right-5 bg-slate-50 my-20  border-2 p-2 border-slate-400 rounded-lg"
+        className="absolute top-[95px] right-5 bg-neutral-500 text-white p-1 rounded-lg text-bold"
       >
         Back to Home
       </Link>

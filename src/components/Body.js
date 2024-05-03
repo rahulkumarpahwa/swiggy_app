@@ -15,7 +15,7 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  const { loggedInUser, setUserName } = useContext(UserContext); // for using context
+  // const { loggedInUser, setUserName } = useContext(UserContext); // for using context
 
   const RestaurantCardVeg = withVegLabel(RestaurantCard);
 
@@ -67,11 +67,11 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter flex justify-center m-4 p-2 ">
-        <div className="flex justify-between mx-4  border-4 bg-white border-slate-300 rounded-lg">
+      <div className="filter flex justify-center gap-10 m-4 p-2 ">
+        <div className="flex justify-between mx-4 border-4 border-neutral-500 rounded-lg">
           <input
             type="text"
-            className="search-box w-[400px] text-center rounded-lg mr-1 "
+            className="search-box w-[400px] text-center text-neutral-500 rounded-lg mr-1 focus:outline-none "
             placeholder="Search here!"
             value={searchText}
             onChange={(e) => {
@@ -80,7 +80,7 @@ const Body = () => {
             }}
           />
           <button
-            className="bg-white rounded-lg"
+            className="bg-neutral-500 "
             onClick={() => {
               // console.log(searchText);
               const filteredRest = listOfRestaurants.filter((res) =>
@@ -92,11 +92,13 @@ const Body = () => {
               setFilteredRestaurant(filteredRest);
             }}
           >
-            <i className="fa-solid fa-search mx-3  "></i>
+            <i className="fa-solid fa-search mx-3 text-white "></i>
           </button>
         </div>
 
-        <div>
+
+{/* content changing */}
+        {/* <div>
           <input
             value={loggedInUser}
             placeholder="Type and See magic!"
@@ -105,10 +107,10 @@ const Body = () => {
             }}
             className="p-2 border-4 text-center bg-white border-slate-300 rounded-lg"
           />
-        </div>
+        </div> */}
 
         <button
-          className="filter-btn mx-4 p-2 rounded-lg border-4 bg-blue-200 text-slate-500 font-bold"
+          className="filter-btn bg-neutral-500 text-white p-1 rounded-lg text-bold"
           onClick={() => {
             // listOfRestaurants = listOfRestaurants.filter(
             //   (res) => res.info.avgRating > 4
@@ -120,15 +122,24 @@ const Body = () => {
             setFilteredRestaurant(filteredList);
           }}
         >
-          Top Rated Restaurants
+          <div className="text-teal-400">
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+          </div>
+          Top Rated Restaurant
         </button>
         <button
-          className="mx-2 p-2 rounded-lg border-4 bg-blue-200 text-red-500 font-bold"
+          className="bg-neutral-500 text-white p-1 rounded-lg text-bold"
           onClick={() => {
             setFilteredRestaurant(listOfRestaurants);
           }}
         >
-          Reset Filter
+          <div>
+            <i className="fa-solid fa-xmark text-red-500"></i>
+          </div>
+          Reset
         </button>
       </div>
       <div className="res-container flex flex-wrap justify-center items-center w-full ">

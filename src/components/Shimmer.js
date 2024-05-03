@@ -3,7 +3,7 @@ const Shimmer = () => {
   for (let i = 0; i < 15; i++) {
     arr.push(
       <div
-        className="res-card w-80 h-[510px] m-8 p-2 rounded-lg bg-slate-300 shimmer-card "
+        className="res-card w-80 h-[510px] m-3 p-2 rounded-lg bg-slate-300 shimmer-card "
         key={i}
       >
         <div className="shimmer-img w-full h-[70%] bg-slate-400 rounded-lg"></div>
