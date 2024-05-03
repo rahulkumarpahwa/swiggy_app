@@ -306,12 +306,14 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { lazy, Suspense } from "react";
 const Grocery = lazy(() => import("./components/Grocery"));
-const About = lazy(() => import("./components/About"));
+// const About = lazy(() => import("./components/About"));
+const AboutNew = lazy(() => import("./components/AboutNew"));
+
 import UserContext from "../utils/UserContext";
 
 //component composition
 const AppLayout = () => {
-  const [userName, setUserName] = useState("Elon Musk");
+  const [userName, setUserName] = useState("user");
   return (
     <UserContext.Provider
       value={{ loggedInUser: userName, setUserName: setUserName }}
@@ -339,7 +341,7 @@ const appRouter = createBrowserRouter([
         path: "/about",
         element: (
           <Suspense fallback={<h1>Loading About!!!</h1>}>
-            <About />
+            <AboutNew />
           </Suspense>
         ),
       },

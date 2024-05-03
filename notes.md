@@ -30,4 +30,39 @@ https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&la
 //chandigarh api restaurant:
 //https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7108654&lng=77.20314929999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
 
-
+<li>React</li>
+                  <li>React Element</li>
+                  <li>JSX</li>
+                  <li>Transpile by Babel.js</li>
+                  <li>Parcel / Bundler</li>
+                  <li>React DOM</li>
+                  <li>Functional Components</li>
+                  <li>Class Based Components</li>
+                  <li>UI Mock</li>
+                  <li>React Props</li>
+                  <li>Config Driven UI</li>
+                  <li>Swiggy API</li>
+                  <li>Optional Chaining</li>
+                  <li>React Hooks</li>
+                  <li>React Conciliation Algorithm</li>
+                  <li>Virtual DOM</li>
+                  <li>Monolith vs Microservices </li>
+                  <li>CORS</li>
+                  <li>Shimmer UI</li>
+                  <li>Map, Filter, Reduce</li>
+                  <li>React-Router-Dom</li>
+                  <li>Children Routing</li>
+                  <li>useRouterError</li>
+                  <li>SPA (Single Page Application)</li>
+                  <li>useParams</li>
+                  <li>React Life Cycle Methods</li>
+                  <li>Custom Hooks</li>
+                  <li>Lazing Loading / Dynamic Bundling </li>
+                  <li>TailwindCSS</li>
+                  <li>Higher Order Components</li>
+                  <li>Uncontrolled / Controlled Component</li>
+                  <li>Lifting Up the State</li>
+                  <li>Props Drilling</li>
+                  <li>React Context</li>
+                  <li>Redux Toolkit</li>
+                  <li>React-Redux Library</li>
