@@ -73,14 +73,15 @@ const RestaurantMenu = () => {
             setShowIndex={() => setShowIndex(index)}
           />
         ))}
-        ;
       </div>
-      <Link
-        to={"/"}
-        className="absolute top-[95px] right-5 bg-neutral-500 text-white p-1 rounded-lg text-bold"
-      >
-        Back to Home
-      </Link>
+      <div className="flex items-center justify-center my-5">
+        <Link
+          to={"/"}
+          className="bg-neutral-500 text-white p-1 px-20 rounded-lg text-bold text-xl"
+        >
+          Back to Home
+        </Link>
+      </div>
     </div>
   );
 };

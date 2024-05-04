@@ -9,9 +9,9 @@ export const MENU_API =
 export const LOGO_URL =
   "https://res.cloudinary.com/dwtcjjxwc/image/upload/v1708591342/logo.png";
 
-export const RES_API =
-  "https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING";
+// export const RES_API =
+//   "https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING";
 
-  // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7108654&lng=77.20314929999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+  export const RES_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7108654&lng=77.20314929999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
 

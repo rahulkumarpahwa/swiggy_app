@@ -142,7 +142,7 @@ const Body = () => {
           Reset
         </button>
       </div>
-      <div className="res-container flex flex-wrap justify-center items-center w-full ">
+      <div className="res-container flex flex-wrap justify-center items-center w-full">
         {/* this res-container will contain lot of restaurant cards */}
         {/* <RestaurantCard
             resName="Meghana Foods"
