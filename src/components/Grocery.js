@@ -1,4 +1,8 @@
+import useGrocery from "../../utils/useGrocery";
+
 const Grocery = () => {
+  const grocery = useGrocery();
+  console.log(grocery);
   return (
     <h1>
       {" "}
