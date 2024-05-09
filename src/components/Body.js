@@ -68,7 +68,7 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter flex justify-center gap-10 m-4 p-2 ">
-        <div className="flex justify-between mx-4 border-4 border-neutral-500 rounded-lg">
+        <div className="flex justify-between mx-4 border-4 border-[#f69c16] rounded-lg">
           <input
             type="text"
             className="search-box w-[400px] text-center text-neutral-500 rounded-lg mr-1 focus:outline-none "
@@ -80,7 +80,7 @@ const Body = () => {
             }}
           />
           <button
-            className="bg-neutral-500 "
+            className="bg-[#f69c16] "
             onClick={() => {
               // console.log(searchText);
               const filteredRest = listOfRestaurants.filter((res) =>
@@ -96,8 +96,7 @@ const Body = () => {
           </button>
         </div>
 
-
-{/* content changing */}
+        {/* content changing */}
         {/* <div>
           <input
             value={loggedInUser}
@@ -110,7 +109,7 @@ const Body = () => {
         </div> */}
 
         <button
-          className="filter-btn bg-neutral-500 text-white p-1 rounded-lg text-bold"
+          className="filter-btn bg-[#f69c16] text-white p-1 rounded-lg text-bold"
           onClick={() => {
             // listOfRestaurants = listOfRestaurants.filter(
             //   (res) => res.info.avgRating > 4
@@ -131,7 +130,7 @@ const Body = () => {
           Top Rated Restaurant
         </button>
         <button
-          className="bg-neutral-500 text-white p-1 rounded-lg text-bold"
+          className="bg-[#f69c16] text-white p-1 rounded-lg text-extrabold"
           onClick={() => {
             setFilteredRestaurant(listOfRestaurants);
           }}

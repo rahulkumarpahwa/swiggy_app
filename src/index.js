@@ -313,7 +313,7 @@ import UserContext from "../utils/UserContext";
 
 //component composition
 const AppLayout = () => {
-  const [userName, setUserName] = useState("user");
+  const [userName, setUserName] = useState("Rahul K.");
   return (
     <UserContext.Provider
       value={{ loggedInUser: userName, setUserName: setUserName }}
