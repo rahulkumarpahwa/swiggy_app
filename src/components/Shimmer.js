@@ -3,15 +3,15 @@ const Shimmer = () => {
   for (let i = 0; i < 15; i++) {
     arr.push(
       <div
-        className="res-card w-80 h-[27rem] m-3 p-2 rounded-lg bg-neutral-300 shimmer-card mt-20 "
+        className="res-card w-72 h-[20rem] m-4 p-2 rounded-lg bg-white hover:opacity-80 shadow-[1px_5px_8px_rgba(0,_0,_0,_0.134)] hover:scale-110 duration-150 mt-10"
         key={i}
       >
         <div className="shimmer-img w-full h-[70%] bg-neutral-400 rounded-lg"></div>
         <div className="flex flex-col my-3">
-          <h3 className="w-20 h-5 my-1 rounded-2xl bg-neutral-400"></h3>
-          <h4 className="w-20 h-5 my-1 rounded-2xl bg-neutral-400"></h4>
-          <h4 className="w-20 h-5 my-1 rounded-2xl bg-neutral-400"></h4>
-          <h4 className="w-20 h-5 my-1 rounded-2xl bg-neutral-400"></h4>
+          <h3 className="w-20 h-2 my-1 rounded-2xl bg-neutral-400"></h3>
+          <h4 className="w-20 h-2 my-1 rounded-2xl bg-neutral-400"></h4>
+          <h4 className="w-20 h-2 my-1 rounded-2xl bg-neutral-400"></h4>
+          <h4 className="w-20 h-2 my-1 rounded-2xl bg-neutral-400"></h4>
         </div>
       </div>
     );

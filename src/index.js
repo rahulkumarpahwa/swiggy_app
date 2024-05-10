@@ -310,6 +310,7 @@ const Grocery = lazy(() => import("./components/Grocery"));
 const AboutNew = lazy(() => import("./components/AboutNew"));
 
 import UserContext from "../utils/UserContext";
+import Shimmer2 from "./components/Shimmer2.js";
 
 //component composition
 const AppLayout = () => {
@@ -349,7 +350,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/grocery",
         element: (
-          <Suspense fallback={<h1>Loading!!!</h1>}>
+          <Suspense fallback={<Shimmer2/>}>
             <Grocery />
           </Suspense>
         ),

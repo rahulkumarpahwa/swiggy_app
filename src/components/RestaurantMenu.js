@@ -1,5 +1,4 @@
 // import { useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 // import { MENU_API } from "../../utils/constants";
 import { Link } from "react-router-dom";
@@ -7,6 +6,7 @@ import useRestaurantMenu from "../../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import { useState } from "react";
 import { CDN_URL } from "../../utils/constants";
+import Shimmer2 from "./Shimmer2";
 
 const RestaurantMenu = () => {
   // const params = useParams();
@@ -19,7 +19,7 @@ const RestaurantMenu = () => {
 
   const resInfo = useRestaurantMenu(resId); //custom functional Hook
 
-  if (resInfo === null) return <Shimmer />;
+  if (resInfo === null) return <Shimmer2 />;
 
   const { costForTwoMessage, cuisines, name, cloudinaryImageId } =
     resInfo?.cards[2]?.card?.card?.info;

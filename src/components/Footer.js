@@ -3,14 +3,14 @@ const Footer = () => {
     <div className="footer mt-2 pt-3 flex flex-col justify-center items-center text-white bg-neutral-500">
       <div className="py-12">
         <div
-          className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 px-4 sm:px-6 lg:px-8 
+          className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-4 sm:px-6 lg:px-8 
       text-center sm:text-left lg:text-left   "
         >
           <div>
-            <h2 className="text-white text-lg font-semibold mb-4">About Us</h2>
+            <h2 className="text-white text-lg font-semibold mb-4 text-justify">About Us</h2>
             <p className="mb-4">
-              Crave Bites is a Food Ordering Platform, which makes you choose the best food.
-              Our Motto is Where Flavour meets You.
+              ਸਵਿਗੀ is a Food Ordering Platform, which makes you choose the best
+              food from your favourite restaurant.
             </p>
           </div>
           <div>
@@ -20,7 +20,7 @@ const Footer = () => {
             <ul>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="hover:text-white transition-colors duration-300"
                 >
                   Home
@@ -28,7 +28,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/about"
                   className="hover:text-white transition-colors duration-300"
                 >
                   About
@@ -36,7 +36,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/grocery"
                   className="hover:text-white transition-colors duration-300"
                 >
                   Grocery
@@ -44,7 +44,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/contact"
                   className="hover:text-white transition-colors duration-300"
                 >
                   Contact
@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="text-center text-xs pt-8">
-          © 2024 Crave Bites. All rights reserved.
+          © 2024 ਸਵਿਗੀ. All rights reserved.
         </p>
       </div>
     </div>

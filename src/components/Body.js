@@ -67,12 +67,12 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter flex justify-center gap-10 m-4 p-2 ">
-        <div className="flex justify-between mx-4 border-4 border-[#f69c16] rounded-lg">
+      <div className="filter flex justify-center gap-10 m-4 p-1 ">
+        <div className="flex justify-between mx-4 border border-[#f67016] rounded-lg">
           <input
             type="text"
-            className="search-box w-[400px] text-center text-neutral-500 rounded-lg mr-1 focus:outline-none "
-            placeholder="Search here!"
+            className="search-box w-[500px] text-center text-neutral-500 rounded-lg  focus:outline-none "
+            placeholder="Search Here..."
             value={searchText}
             onChange={(e) => {
               // console.log(e.target.value);
@@ -80,7 +80,7 @@ const Body = () => {
             }}
           />
           <button
-            className="bg-[#f69c16] "
+            className="bg-[#f67016] rounded-tr rounded-br"
             onClick={() => {
               // console.log(searchText);
               const filteredRest = listOfRestaurants.filter((res) =>
@@ -109,7 +109,7 @@ const Body = () => {
         </div> */}
 
         <button
-          className="filter-btn bg-[#f69c16] text-white p-1 rounded-lg text-bold"
+          className="filter-btn bg-[#f67016] text-white p-1 px-2 rounded-lg font-bold"
           onClick={() => {
             // listOfRestaurants = listOfRestaurants.filter(
             //   (res) => res.info.avgRating > 4
@@ -121,7 +121,8 @@ const Body = () => {
             setFilteredRestaurant(filteredList);
           }}
         >
-          <div className="text-teal-400">
+          <div className="text-neutral-200">
+            <i className="fa-solid fa-star"></i>
             <i className="fa-solid fa-star"></i>
             <i className="fa-solid fa-star"></i>
             <i className="fa-solid fa-star"></i>
@@ -130,13 +131,13 @@ const Body = () => {
           Top Rated Restaurant
         </button>
         <button
-          className="bg-[#f69c16] text-white p-1 rounded-lg text-extrabold"
+          className="bg-[#f67016] text-white p-1 px-2 rounded-lg font-bold"
           onClick={() => {
             setFilteredRestaurant(listOfRestaurants);
           }}
         >
           <div>
-            <i className="fa-solid fa-xmark text-red-500"></i>
+            <i className="fa-solid fa-xmark text-neutral-200"></i>
           </div>
           Reset
         </button>
