@@ -1,6 +1,6 @@
 # Introduction :
 
-This Food Ordering App named as ਸਵਿਗੀ has been created as the part of learning react. This is main project which holds all the learnings and topics covered with it.
+This Food Ordering App named as ਸਵਿਗੀ has been created as the part of learning react. This is main project which holds all the learnings and topics of React and ReduxToolkit.
 
 # Things I learned are :
 
