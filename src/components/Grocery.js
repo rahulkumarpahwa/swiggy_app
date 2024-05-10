@@ -26,7 +26,7 @@ const Grocery = () => {
             setInput("");
           }}
         >
-          <i className="fa-solid fa-search p-3 rounded-tr rounded-br text-white bg-[#f67016]">
+          <i className="fa-solid fa-search p-4 rounded-tr rounded-br text-white bg-[#f67016]">
             {" "}
           </i>
         </button>
