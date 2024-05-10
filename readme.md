@@ -30,3 +30,5 @@ This Food Ordering App named as ਸਵਿਗੀ has been created as the part of 
 - Redux Toolkit
 - React Redux
 - TailwindCSS
+
+# Live : [https://the-swiggy-app.vercel.app/](ਸਵਿਗੀ)
